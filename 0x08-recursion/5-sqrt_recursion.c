@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _sqrt_checker - checks if a number is a square root
+ * _sqrt_check - checks if a number is a square root
  * @n: number to be checked
  * @start: parameter 1
  * @end: parameter 2
@@ -34,6 +34,13 @@ int _sqrt_check(int n, int start, int end)
 		return (_sqrt_check(n, start, m - 1));
 	}
 }
+
+/**
+ * _sqrt_recursion - checks if n has natural sqaure root
+ * @n: number to be checked
+ *
+ * Return: -1 if no natural square root.
+ */
 
 int _sqrt_recursion(int n)
 {
