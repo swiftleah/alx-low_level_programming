@@ -11,27 +11,26 @@
 
 int _sqrt_check(int n, int start, int end)
 {
-	int m = (start + end) / 2;
-	int i = m * m;
+	int m = start + (end - start) / 2;
 
 	if (start > end)
 	{
 		return (-1);
 	}
 
-	if (i == n)
+	if (m == n / m && n % m == 0)
 	{
 		return (m);
 	}
 
-	else if (i < n)
+	else if (m > n / m)
 	{
-		return (_sqrt_check(n, m + 1, end));
+		return (_sqrt_check(n, start, m - 1));
 	}
 
 	else
 	{
-		return (_sqrt_check(n, start, m - 1));
+		return (_sqrt_check(n, m + 1, end));
 	}
 }
 
