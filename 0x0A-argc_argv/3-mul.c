@@ -25,16 +25,8 @@ int main(int argc, char *argv[])
 	x = atoi(argv[1]);
 	y = atoi(argv[2]);
 	mul = x * y;
-
-	if (x < 0 || y < 0)
-	{
-		printf("-%d\n", mul);
-	}
-
-	else
-	{
-		printf("%d\n", mul);
-	}
+	
+	printf("%d\n", mul);
 
 	return (0);
 }
