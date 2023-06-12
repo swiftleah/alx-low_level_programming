@@ -26,14 +26,8 @@ char *str_concat(char *s1, char *s2)
 	}
 	if (ptr != NULL)
 	{
-		if (len1 > 0)
-		{
-			memcpy(ptr, s1, len1);
-		}
-		if (len2 > 0)
-		{
-			memcpy(ptr + len1, s2, len2);
-		}
+		memcpy(ptr, s1, len1);
+		memcpy(ptr + len1, s2, len2);
 		ptr[size - 1] = '\0';
 	}
 
