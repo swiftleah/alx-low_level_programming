@@ -10,19 +10,28 @@
 
 char *str_concat(char *s1, char *s2)
 {
-	char *ptr;
+	int i;
+	int len1 = strlen(s1);
+	int len2 = strlen(s2);
+	int size = len1 + len2 + 1;
 
-	size_t str1 = strlen(s1);
-	size_t str2 = strlen(s1);
+	char *ptr = calloc(size, sizeof(char));
 
-	ptr = (char *)malloc((str1 + str2 + 1) * sizeof(char));
-
-	if (ptr != NULL)
+	if (ptr == NULL)
 	{
-		strncpy(ptr, s1, str1);
-		strncpy(ptr + str1, s2, str2);
+		return (NULL);
 	}
+
+	for (i = 0; i < len1; i++)
+	{
+		ptr[i] = s1[i];
+	}
+	for (i = 0; i < len2; i++)
+	{
+		ptr[len1 + i] = s2[i];
+	}
+
+	ptr[size - 1] = '\0';
 
 	return (ptr);
 }
-
