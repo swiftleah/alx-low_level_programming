@@ -2,8 +2,8 @@
 
 /**
  * alloc_grid - returns ptr to a 2d array of ints
- * @width - width of grid
- * @height - height of grid
+ * @width: width of grid
+ * @height: height of grid
  *
  * Return: ptr to 2d array, NULL if parameters are 0.
  */
