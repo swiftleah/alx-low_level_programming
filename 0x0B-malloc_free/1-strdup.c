@@ -1,7 +1,8 @@
 #include "main.h"
 
 /**
- * _strdup - returns ptr to allocated memory space containing copy of given string
+ * _strdup - returns ptr to allocated memory space containing
+ *copy of given string
  * @str: string specified
  *
  * Return: ptr, NULL if otherwise.
