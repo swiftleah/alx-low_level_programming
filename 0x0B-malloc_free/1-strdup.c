@@ -12,20 +12,20 @@ char *_strdup(char *str)
 	char *cpy;
 	size_t length;
 
-	if (*str == NULL)
+	if (str == NULL)
 	{
 		return (NULL);
 	}
 
 	length = strlen(str) + 1;
-	cpy = (char *)malloc(sizeof(length));
+	cpy = (char *)malloc(length);
 
-	if (cpy != NULL)
+	if (cpy == NULL)
 	{
-		memcpy(cpy, str, length);
-		free(cpy);
+		return (NULL);
 	}
 
-	return (0);
+	memcpy(cpy, str, length);
+	return (cpy);
 }
 
