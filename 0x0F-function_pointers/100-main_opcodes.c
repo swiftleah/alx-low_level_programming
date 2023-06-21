@@ -1,6 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/**
+ * main - prints opcodes of its own main function
+ * @argc: argument count
+ * @argv: argument vector
+ *
+ * Return: opcode
+ */
 int main(int argc, char *argv[])
 {
 	int bytes;
@@ -9,6 +16,7 @@ int main(int argc, char *argv[])
 
 	if (argc != 2)
 	{
+		printf("Error\n");
 		return (1);
 	}
 
@@ -16,6 +24,7 @@ int main(int argc, char *argv[])
 
 	if (bytes < 0)
 	{
+		printf("Error\n");
 		return (2);
 	}
 
