@@ -16,23 +16,15 @@ void print_all(const char * const format, ...)
 	char *s;
 
 	va_start(args, format);
-
 	while (format[i] != '\0')
 	{
 		count = format[i];
-
 		if (count == 'c')
-		{
-			printf("%c ", va_arg(args, int));
-		}
+			printf("%c", va_arg(args, int));
 		else if (count == 'i')
-		{
-			printf("%d ", va_arg(args, int));
-		}
+			printf("%d", va_arg(args, int));
 		else if (count == 'f')
-		{
-			printf("%f ", va_arg(args, double));
-		}
+			printf("%f", va_arg(args, double));
 		else if (count == 's')
 		{
 			s = va_arg(args, char *);
@@ -43,8 +35,13 @@ void print_all(const char * const format, ...)
 			}
 			else
 			{
-				printf("%s ", s);
+				printf("%s", s);
 			}
+		}
+		if (format[i + 1] != '\0' && (count == 'c' || count == 'i' ||
+					count == 'f' || count == 's'))
+		{
+			printf(", ");
 		}
 		i++;
 	}
