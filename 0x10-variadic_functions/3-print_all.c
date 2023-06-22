@@ -21,11 +21,11 @@ void print_all(const char * const format, ...)
 		count = format[i];
 		if (count == 'c')
 			printf("%c", va_arg(args, int));
-		else if (count == 'i')
+		if (count == 'i')
 			printf("%d", va_arg(args, int));
-		else if (count == 'f')
+		if (count == 'f')
 			printf("%f", va_arg(args, double));
-		else if (count == 's')
+		if (count == 's')
 		{
 			s = va_arg(args, char *);
 
