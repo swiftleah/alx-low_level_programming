@@ -9,14 +9,12 @@
 
 void print_all(const char * const format, ...)
 {
-	int i;
+	int i = 0;
 	char count;
 	char *s;
 	va_list args;
 
 	va_start(args, format);
-	i = 0;
-
 	while (format[i] != '\0')
 	{
 		count = format[i];
@@ -34,22 +32,18 @@ void print_all(const char * const format, ...)
 			case 's':
 			{
 				s = va_arg(args, char *);
-
 				if (s == NULL)
 				{
 					printf("(nil)");
 					break;
 				}
-
 				printf("%s", s);
 				break;
 			}
 		}
 		if (format[i + 1] != '\0' && (count == 'c' || count == 'i' ||
 					count == 'f' || count == 's'))
-		{
 			printf(", ");
-		}
 		i++;
 	}
 	va_end(args);
