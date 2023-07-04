@@ -14,9 +14,9 @@ size_t free_listint_safe(listint_t **h)
 	while (current != NULL)
 	{
 		nextnode = current->next;
-		free(count);
+		free(current);
 		count++;
-		current = nextnode
+		current = nextnode;
 	}
 	*h = NULL;
 
