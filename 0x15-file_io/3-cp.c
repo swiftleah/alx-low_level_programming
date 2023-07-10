@@ -25,12 +25,10 @@ void print_error(const char *message)
  */
 int main(int argc, char *argv[])
 {
-	const char *file_from;
-	const char *file_to;
+	const char *file_from, *file_to;
 	int fd_from, fd_to;
 	char buffer[BUFFER_SIZE];
-	ssize_t bytesrd;
-	ssize_t byteswr;
+	ssize_t bytesrd, byteswr;
 
 	if (argc != 3)
 	{
@@ -55,17 +53,18 @@ int main(int argc, char *argv[])
 		close(fd_from);
 		exit(99);
 	}
-	while ((bytesrd = read(fd_from, buffer, BUFFER_SIZE)) > 0) {
-        byteswr = write(fd_to, buffer, bytesrd);
-        if (byteswr == -1) {
-            print_error("Can't write to file");
-            print_error(file_to);
-            close(fd_from);
-            close(fd_to);
-            exit(99);
-        }
-    }
-
+	while ((bytesrd = read(fd_from, buffer, BUFFER_SIZE)) > 0)
+	{
+		byteswr = write(fd_to, buffer, bytesrd);
+		if (byteswr == -1)
+		{
+			print_error("Can't write to file");
+			print_error(file_to);
+			close(fd_from);
+			close(fd_to);
+			exit(99);
+		}
+	}
 	if (bytesrd == -1)
 	{
 		print_error("Can't read from file");
