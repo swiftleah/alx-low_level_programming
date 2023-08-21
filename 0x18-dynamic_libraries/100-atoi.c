@@ -4,4 +4,8 @@
  * @s: pointer
  * Return: int
  */
-int _atoi(char *s);
+int _atoi(char *s)
+{
+	s++;
+	return (0);
+}
