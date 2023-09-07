@@ -9,24 +9,26 @@
 
 char *hash_table_get(const hash_table_t *ht, const char *key)
 {
-	unsigned long int index;
-	hash_node_t *current = NULL;
+	unsigned long int index = 0;
+	hash_node_t *temp;
 
 	if (ht == NULL || key == NULL || *key == '\0')
 		return (NULL);
+
 	index = key_index((const unsigned char *)key, ht->size);
 	printf("%li\n", index);
 
-	current = ht->array[index];
-	while (current)
+	temp = ht->array[index];
+	while (temp)
 	{
-		if (strcmp(current->key, key) == 0)
+		printf("Entered while loop\n");
+		if (strcmp(temp->key, key) == 0)
 		{
 			printf("Found key\n");
-			return (current->value);
+			return (temp->value);
 		}
 		printf("Iterating\n");
-		current = current->next;
+		temp = temp->next;
 	}
 	return (NULL);
 }
