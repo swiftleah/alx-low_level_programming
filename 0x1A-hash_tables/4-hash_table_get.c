@@ -16,18 +16,14 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 		return (NULL);
 
 	index = key_index((const unsigned char *)key, ht->size);
-	printf("%li\n", index);
 
 	temp = ht->array[index];
 	while (temp)
 	{
-		printf("Entered while loop\n");
 		if (strcmp(temp->key, key) == 0)
 		{
-			printf("Found key\n");
 			return (temp->value);
 		}
-		printf("Iterating\n");
 		temp = temp->next;
 	}
 	return (NULL);
